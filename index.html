@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .button{
+            color: white;
+            padding: 8px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 13px;
+            margin: 2px 1px;
+            cursor: pointer;
+            border-radius: 12px;
+            border: none;
+            transition-duration: 0.4s;
+            background-color: #4749b6;
+            transition-property: box-shadow;
+        }
+        .button1:hover {
+            background-color: #48dd23;
+            color: white;
+        }
+        .button2:hover {
+            background-color: #f30e0e;
+            color: white;
+        }
+        .button3-success {
+            background: #03d29f;
+            box-shadow: 0 0 5px #03d29f;
+        }
+        .button3-success:hover {
+            box-shadow: 0 0 5px #03d29f,
+            0 0 25px #03d29f,
+            0 0 50px #03d29f,
+            0 0 100px #03d29f;
+        }
+        .button5-success {
+            background: #e77060;
+            box-shadow: 0 0 5px #f30e0e;
+        }
+        .button5-success:hover {
+            box-shadow: 0 0 5px #f30e0e,
+            0 0 25px #f30e0e,
+            0 0 50px #f30e0e,
+            0 0 100px #f30e0e;
+        }
+        .button4{
+            color: rgb(10, 10, 10);
+            padding: 8px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 13px;
+            margin: 2px 1px;
+            cursor: pointer;
+            border-radius: 12px;
+            border: none;
+            transition-duration: 0.4s;
+            background-color: white;
+        }
+        
+        .center {                             /*add more button*/
+            margin: 0;
+            position: absolute;
+            left: 45%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            align-items: center;
+            justify-content: center;
+        } 
+        .center1 {                                 /*number box*/
+            margin: 0;
+            position: absolute;
+            left: 29%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        .center2 {                                   /* select*/
+            margin: 0;
+            position: absolute;
+            left: 39%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        .center3 {                                  /*search button*/
+            margin: 0;              
+            position: absolute;
+            left: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        .center4 {                                  /*get code button*/
+            margin: 0;              
+            position: absolute;
+            left: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        .center5 {                                 /*submit butten*/
+            margin: 0;
+            position: absolute;
+            left: 46%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        .center6 {                             /*box*/
+            margin: 0;
+            position: absolute;
+            top: 15%;
+            left: 12%;
+            align-items: center;
+            justify-content: center;
+        }
+        .div1 {
+            width: 300px;
+            height: 100px;  
+            padding: 100px;
+           border: 1px solid red;
+        }
+        ul {
+            width: 900px;
+            height: auto;
+            border: 2px solid black;
+            padding: 50px;
+            background-color: rgb(233, 239, 241);
+            border-radius: 12px;
+            
+        }
+        .center7 {                                  /*add button function*/
+            margin: 0;
+            position: absolute;
+            top: 65%;
+            left: 15%;
+            align-items: center;
+            justify-content: center;
+            
+            
+        }
+        
+    </style>
+    <title>index</title>
+</head>
+<body>
+    
+    <ul class="center6">
+    <meta charset="UTF-8">
+    <link rel="stylesheet">
+    <title>ENTER TODAY TOP JOBS</title>
+    
+    <div id="box">
+        <button class="button button1 center " id="btn" >Add More</button> <br>
+    </div><br>
+    <form method="POST" action="form.php">
+    <input type="text" name="title" placeholder="Job Title" size="40" required="">
+    <input type="text" name="url" placeholder="Job URL" size="40" required="">
+    
+<script class="center7">
+        var i=1;
+        //buttons functiond
+        var btn=document.querySelector("#btn");
+        i=i++;
+        btn.onclick=function(){
+        var div=document.createElement("div");
+        div.innerHTML=generateit();
+        document.getElementById("box").appendChild(div);
+        }
+        function generateit()
+        //remove button
+        {
+        return"<br><input type='text' placeholder='job title_'i'' size ='40'> <input type='text' placeholder='job URL' 'i+' size='40'> <button onclick='removeit(this)'class='button4 button5-success'>Remove</button>";
+        }
+        function removeit(btn)
+        //remove button function
+        {
+        document.getElementById("box").removeChild(btn.parentNode);
+        }
+</script>
+</div>
+    <br>
+    <h4>Search JOBS With Limets</h4>
+    <div class="center2">
+        <div hight="20" wight="40px">
+        <select>
+            <option value="0">select limit</option>
+            <option value="1">10000</option>
+            <option value="2">20000</option>
+            <option value="3">30000</option>
+            <option value="4">40000</option>
+            <option value="5">50000</option>
+            <option value="6">60000</option>
+            <option value="7">70000</option>
+        </select>
+        </div>
+    </div>
+    <button class="button button1 center3">SEARCH JOBS</button>
+    <br>
+    <br>
+    <br>
+    
+    <input type="tel" class="center1" name="phnum" placeholder="Email (or) mobile number" required="">
+    <button class="button button3-success center4">get code</button>
+    <br>
+    <br>
+    <br>
+    <button  class="button button3-success center5" name="submit">SUBMIT</button>
+</ul>
+    </form>
+</body>
+</html>
